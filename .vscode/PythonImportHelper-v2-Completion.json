@@ -1,0 +1,45 @@
+[
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FoodEnum",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class FoodEnum(str, Enum):\n    fruits = \"fruits\"\n    vegetables = \"vegetables\"\n    dairy = \"dairy\"\n@app.get(\"/fruits/{food_name}\")\nasync def get_food(food_name: FoodEnum):\n    if food_name == FoodEnum.vegetables:\n        return {\"food_name\": food_name, \"message\": \"You are healthy\"}\n    if food_name.value == \"fruits\":\n        return {",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\nasync def root():\n    return {\"Message\": \"Hello world\"}\n@app.get(\"/hello/john\")\nasync def hello():\n    return {\"message\": \"I am extra-ordinary\"}\n@app.get(\"/hello/{item_id}\")\nasync def hello(item_id: str | int):\n    return {\"Item-id\": item_id}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "fake_items_db",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "fake_items_db = [{\"items_name\", \"Foo\"}, {\n    \"items_name\", \"Bar\"}, {\"items_name\", \"BAz\"},\n    {\"items_name\", \"Fourz\"}, {\"items_name\", \"Fivez\"},\n    {\"items_name\", \"Sixz\"}, {\"items_name\", \"Sevenz\"},\n    {\"items_name\", \"Eightz\"}, {\"items_name\", \"Ninez\"},\n]\n@ app.get(\"/itemz\")\nasync def list_items(skip: int = 0, limit: int = 5):\n    return fake_items_db[skip: skip + limit]",
+        "detail": "main",
+        "documentation": {}
+    }
+]
